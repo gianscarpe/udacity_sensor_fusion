@@ -46,8 +46,7 @@ struct KdTree
 
 	void insert(std::vector<float> point, int id)
 	{
-		// TODO: Fill in this function to insert a new point into the tree
-		// the function should create a new node and place correctly with in the root 
+
 		insertHelper(root, 0, point, id);
 	}
 
@@ -57,14 +56,14 @@ struct KdTree
 	{
 		if (node!=NULL)
 		{
-			float node_x = node->point[0];
-			float node_y = node->point[1];
-			float target_x = target[0];
-			float target_y = target[1];
-			if ((node_x >= target_x - distanceTol) && (node_x <= target_x + distanceTol) && (node_y >= target_y - distanceTol) && (node_y <= target_y + distanceTol))
+			float n_x = node->point[0];
+			float n_y = node->point[1];
+			float t_x = target[0];
+			float t_y = target[1];
+			if ((n_x >= t_x - distanceTol) && (n_x <= t_x + distanceTol) && (n_y >= t_y - distanceTol) && (n_y <= t_y + distanceTol))
 			{
-				float x_diff = node_x - target_x;
-				float y_diff = node_y - target_y;
+				float x_diff = n_x - t_x;
+				float y_diff = n_y - t_y;
 				float distance = sqrt(x_diff*x_diff + y_diff*y_diff);
 				if (distance < distanceTol)
 					ids.push_back(node->id);

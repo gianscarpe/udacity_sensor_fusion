@@ -6,7 +6,7 @@
 #include "../../render/render.h"
 #include <unordered_set>
 #include "../../processPointClouds.h"
-// using templates for processPointClouds so also include .cpp to help linker
+// using templates
 #include "../../processPointClouds.cpp"
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr CreateData();
